@@ -4,7 +4,11 @@
     "psr-4": {
       "App\\": "src/App",
       "Framework\\": "src/Framework"
-    }
+    },
+    "files": [
+      "src/App/functions.php",
+      "src/App/config/routes.php"
+    ]
   },
   "authors": [
     {
