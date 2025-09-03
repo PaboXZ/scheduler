@@ -8,3 +8,7 @@ function dd(mixed $value) {
     echo "</pre>";
     die;
 }
+
+function e(string $textToSterilize) {
+    return htmlentities($textToSterilize);
+}

@@ -16,16 +16,19 @@ class Router {
     }
 
     public function resolve(string $path, string $method){
+        $path = parse_url($this->normalizePath($path), PHP_URL_PATH);
+        $method = strtoupper($method);
+
         foreach($this->routes as $route) {
-            if($route['method'] !== $method)
-                continue;
-            if($route['path'] !== $path)
+            if(
+                $route['method'] !== $method ||
+                $route['path'] !== $path
+            )
                 continue;
 
-            $controller = $route['controller'][0];
-            $function = $route['controller'][1];
+            [$controller, $function] = $route['controller'];
 
-            $controller = new $controller;
+            $controller = new $controller();
             $controller->$function();
             break;
         }
