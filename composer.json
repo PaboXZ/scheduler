@@ -1,0 +1,16 @@
+{
+  "name": "pk/scheduler",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/App",
+      "Framework\\": "src/Framework"
+    }
+  },
+  "authors": [
+    {
+      "name": "PaboXZ",
+      "email": "pabo@wp.pl"
+    }
+  ],
+  "require": {}
+}
